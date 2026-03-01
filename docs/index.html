@@ -148,6 +148,24 @@
 hold.this.int age = 21;
 hold.this.boolean isStudent = true;</code></pre>
                     </div>
+
+                    <h3>Unassigned Variables & Reassignment</h3>
+                    <p>You can also declare a variable without jumping immediately to assigning it a value. It will be safely initialized with default null states based on its type behind the scenes.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>// Declare it raw
+hold.this.string name;
+hold.this.int counter;
+
+// Re-assign it later down the block
+name = "Dane";
+counter = 42;
+
+hear_my_mans(f"{name} has {counter} points.");</code></pre>
+                    </div>
                 </section>
 
                 <section id="data-types">

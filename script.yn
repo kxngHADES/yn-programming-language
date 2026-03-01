@@ -1,9 +1,11 @@
-hold.this.string my_name = "Young N Multi-File Edition";
-hold.this.int age = 21;
-hold.this.boolean isStudent = true;
+hold.this.string my_name;
+my_name = "Dane";
 
-hear_my_mans(f"My name is {my_name} \nAge; {age} \nIs a Student; {isStudent}");
+hear_my_mans(f"{my_name}");
 
-laps(i in range(0,3)){
-    hear_my_mans(f"Testing compilation block {i}");
+hold.this.int reps;
+reps = 3;
+
+laps(i in range(0, reps)){
+    hear_my_mans(f"Working out: {reps}");
 }

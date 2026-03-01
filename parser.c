@@ -32,8 +32,11 @@ void Parser_parse_line(Parser* self, char* line) {
         char var_name[100];
         char var_val[512];
         
+        // Try parsing with assignment first: hold.this.type name = value;
         int matched = sscanf(ptr, "%49s %99s = %511[^;];", var_type, var_name, var_val);
+        
         if (matched == 3) {
+            // It has an assignment
             if (strcmp(var_type, "hold.this.character") == 0) {
                 fprintf(self->out, "    char %s = %s;\n", var_name, var_val);
             } else if (strcmp(var_type, "hold.this.sting") == 0 || strcmp(var_type, "hold.this.string") == 0) {
@@ -52,11 +55,50 @@ void Parser_parse_line(Parser* self, char* line) {
             if (!self->has_error) {
                 self->sym_table->add(self->sym_table, var_name, var_type);
             }
-        } else {
-             printf("Syntax Error on line %d: Variable declaration is malformed.\n", self->line_num);
-             self->has_error = 1;
+        } 
+        else {
+            // Try parsing without assignment: hold.this.type name;
+            matched = sscanf(ptr, "%49s %99[^;];", var_type, var_name);
+            if (matched == 2) {
+                if (strcmp(var_type, "hold.this.character") == 0) {
+                    fprintf(self->out, "    char %s = '\\0';\n", var_name);
+                } else if (strcmp(var_type, "hold.this.sting") == 0 || strcmp(var_type, "hold.this.string") == 0) {
+                    fprintf(self->out, "    const char* %s = \"\";\n", var_name);
+                } else if (strcmp(var_type, "hold.this.int") == 0) {
+                    fprintf(self->out, "    long long %s = 0;\n", var_name);
+                } else if (strcmp(var_type, "hold.this.boolean") == 0) {
+                    fprintf(self->out, "    bool %s = false;\n", var_name);
+                } else if (strcmp(var_type, "hold.this.float") == 0) {
+                    fprintf(self->out, "    float %s = 0.0f;\n", var_name);
+                } else {
+                    printf("Syntax Error on line %d: Unknown type '%s'\n", self->line_num, var_type);
+                    self->has_error = 1;
+                }
+
+                if (!self->has_error) {
+                    self->sym_table->add(self->sym_table, var_name, var_type);
+                }
+            } else {
+                 printf("Syntax Error on line %d: Variable declaration is malformed.\n", self->line_num);
+                 self->has_error = 1;
+            }
         }
         return;
+    }
+
+    // 1.5 Variable Reassignment
+    char check_name[100];
+    char reassign_val[512];
+    if (sscanf(ptr, "%99s = %511[^;];", check_name, reassign_val) == 2) {
+        // Did we find an equals sign? And does the variable exist?
+        const char *vt = self->sym_table->get_type(self->sym_table, check_name);
+        if (vt != NULL) {
+            // Exclude loop variable checks that might accidentally match
+            if (strcmp(check_name, "laps") != 0 && strcmp(check_name, "hear_my_mans") != 0) {
+                fprintf(self->out, "    %s = %s;\n", check_name, reassign_val);
+                return;
+            }
+        }
     }
 
     // 2. hear_my_mans Print Statement
