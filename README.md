@@ -6,11 +6,14 @@ YN is a fun, lightweight, dynamically parsed programming language built on top o
 
 An automated installer is provided for Windows systems to easily configure `yn` so it runs natively exactly like Python.
 
-### Quick Install (Windows)
-1. Double click on `install.exe` inside this folder (or run it from your terminal).
-2. It will automatically create the `C:\yn` core directory, install the compiler engine there, and permanently register the `C:\yn` alias into your Windows System PATH Environment Variables.
-3. Restart your terminal exactly once!
-4. **Done!**
+### Quick Install (Windows Standalone GUI)
+Unlike traditional C transpilers, the YN Compiler includes everything you need natively packed into a 1-click Graphical UI.
+1. Download or share the `install.exe` file anywhere on a Windows system.
+2. Double-click `install.exe` to launch the **YN Language GUI Installer**.
+3. Choose to either install the native compiler only, or select the option to have the installer securely download and link GCC MinGW for you automatically in the background.
+4. Once the GUI says Complete, it has cleanly deployed everything to `C:\yn` and registered your System PATH.
+5. Restart your terminal exactly once!
+6. **Done!**
 
 ### For Developers (Compiling from Source)
 If you wish to modify the underlying compiler code (e.g., `parser.c`, `compiler.c`, `symbol_table.c`, or `ync.c`), you can easily recompile the entire engine by running the included build script:
