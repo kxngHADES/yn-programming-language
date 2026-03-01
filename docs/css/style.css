@@ -164,6 +164,40 @@ code {
     color: var(--accent-primary);
 }
 
+/* Mobile Menu Elements */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color: var(--accent-primary);
+}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 4rem);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.mobile-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
 /* Layout */
 .layout-container {
     display: grid;
@@ -504,8 +538,21 @@ hr {
         grid-template-columns: 1fr;
     }
     
+    .mobile-menu-btn {
+        display: block;
+    }
+
     .sidebar {
-        display: none; /* In a real app we'd add a mobile menu toggle */
+        position: fixed;
+        left: -100%;
+        width: 280px;
+        z-index: 95;
+        transition: left var(--transition);
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
+    }
+    
+    .sidebar.active {
+        left: 0;
     }
     
     .nav-brand .version {

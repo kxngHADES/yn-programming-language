@@ -125,4 +125,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+
+    function toggleMobileMenu() {
+        sidebar.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        
+        // Change icon based on state
+        const icon = mobileMenuBtn.querySelector('i');
+        if (sidebar.classList.contains('active')) {
+            icon.className = 'ph ph-x';
+        } else {
+            icon.className = 'ph ph-list';
+        }
+    }
+
+    if (mobileMenuBtn && sidebar && mobileOverlay) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when a link is clicked
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+    }
 });
