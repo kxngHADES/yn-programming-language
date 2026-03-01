@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YN Language Docs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="logo">YN</span>
+            <span class="version">v1.2</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Docs</a>
+            <a href="#">Playground</a>
+            <a href="https://github.com/ndaed/yn-programming-language" target="_blank" class="github-link">
+                <i class="ph ph-github-logo"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="search-box">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" placeholder="Search the streets...">
+                <div class="shortcut-key">/</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h4>Getting Started</h4>
+                    <ul>
+                        <li><a href="#introduction" class="active">Introduction</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#hello-world">Hello World</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h4>Core Syntax</h4>
+                    <ul>
+                        <li><a href="#variables">Variables</a></li>
+                        <li><a href="#data-types">Data Types</a></li>
+                        <li><a href="#output">Output & Strings</a></li>
+                        <li><a href="#loops">Loops (laps)</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <div class="taxi-badge">THE BRONX TO BROOKLYN, COMPILED.</div>
+                <h1>The <span class="highlight">YN</span> Language</h1>
+                <p class="subtitle">A fast, strictly typed, dynamically parsed language for the next generation of engineers. Built entirely on C. Runs like Python.</p>
+                <div class="hero-actions">
+                    <a href="#installation" class="btn btn-primary">
+                        <i class="ph ph-download-simple"></i>
+                        Install YN
+                    </a>
+                    <a href="#hello-world" class="btn btn-secondary">
+                        <i class="ph ph-book-open-text"></i>
+                        Read Docs
+                    </a>
+                </div>
+            </header>
+
+            <div class="doc-content">
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Welcome to the official documentation for the YN Programming Language. YN brings Python-style interpolations, strict typing, and an entirely new urban-inspired syntax format down to a fast native C compiler.</p>
+                </section>
+
+                <section id="installation">
+                    <h2>Installation</h2>
+                    <p>For Windows users, we provide a standalone GUI installer that natively packs the compiler into a single click.</p>
+                    
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ph-fill ph-download-simple"></i></div>
+                        <div class="step-details">
+                            <h3>1. Get the Installer</h3>
+                            <p>Download the <code>install.exe</code> standalone application.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ph-fill ph-gear"></i></div>
+                        <div class="step-details">
+                            <h3>2. Run Native Compiler</h3>
+                            <p>Launch the YN Language GUI Installer. It can securely download and link GCC MinGW for you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ph-fill ph-terminal-window"></i></div>
+                        <div class="step-details">
+                            <h3>3. Restart Terminal</h3>
+                            <p>Once deployed to <code>C:\yn</code>, restart your terminal and you're done.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">bash</span>
+                            <button class="copy-btn" title="Copy code"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>yn script.yn</code></pre>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section id="hello-world">
+                    <h2>Hello World</h2>
+                    <p>Outputting text in YN is street-certified. Use <code>hear_my_mans()</code> to print anything to the console.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>hear_my_mans("Hello, World!");</code></pre>
+                    </div>
+                </section>
+
+                <section id="variables">
+                    <h2>Variables</h2>
+                    <p>YN implements strict typing using the <code>hold.this.</code> prefix format. You must declare the exact type of variables when you spawn them.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>hold.this.string my_name = "Young N Multi-File Edition";
+hold.this.int age = 21;
+hold.this.boolean isStudent = true;</code></pre>
+                    </div>
+                </section>
+
+                <section id="output">
+                    <h2>Output & Strings</h2>
+                    <p>We support Python-style localized f-string interpolations natively into print statements.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>hold.this.int age = 21;
+hear_my_mans(f"My age is {age} and I live in NY");</code></pre>
+                    </div>
+                </section>
+
+                <section id="loops">
+                    <h2>Loops (laps)</h2>
+                    <p>Running laps is fundamental. YN simplifies the classic iteration protocol into clean, expressive blocks using <code>laps</code>.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>laps(i in range(0,3)){
+    hear_my_mans(f"Testing compilation block {i}");
+}</code></pre>
+                    </div>
+                </section>
+            </div>
+            
+            <footer class="doc-footer">
+                <div class="footer-inner">
+                    <p>&copy; 2025 YN Language. Designed in NY.</p>
+                    <a href="#top" class="back-to-top">Back to top <i class="ph ph-arrow-up"></i></a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
