@@ -12,11 +12,15 @@ An automated installer is provided for Windows systems to easily configure `yn` 
 3. Restart your terminal exactly once!
 4. **Done!**
 
-### For Bash/Git Bash
-Alternatively, if you only strictly use Git Bash on Windows or Mac, you can bypass the installer and set up a terminal alias by running this command in the folder containing `ync.exe`:
-```bash
-echo alias yn=\'\"$(pwd)/ync.exe\"\' >> ~/.bash_profile && source ~/.bash_profile
+### For Developers (Compiling from Source)
+If you wish to modify the underlying compiler code (e.g., `parser.c`, `compiler.c`, `symbol_table.c`, or `ync.c`), you can easily recompile the entire engine by running the included build script:
+
+```console
+compile.bat
 ```
+
+*(Or manually run: `gcc ync.c compiler.c parser.c symbol_table.c -o ync.exe`)*
+Then follow the **Quick Install** instructions above to globally register your customized build!
 
 ---
 
