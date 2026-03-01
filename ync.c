@@ -415,13 +415,23 @@ void destroy_compiler(Compiler* comp) {
     if (comp) free(comp);
 }
 
+#define YN_VERSION "1.0.0"
+
 // ==========================================
 // 4. Application Entry Point
 // ==========================================
 int main(int argc, char** argv) {
+    if (argc >= 2) {
+        if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0) {
+            printf("YN Language Compiler (ync) v%s - OOP Native Engine\n", YN_VERSION);
+            return 0;
+        }
+    }
+
     if (argc < 2) {
-        printf("YN Language Compiler (ync) - OOP Native Engine\n");
+        printf("YN Language Compiler (ync) v%s - OOP Native Engine\n", YN_VERSION);
         printf("Usage: yn <script.yn>\n");
+        printf("       yn --version\n");
         return 1;
     }
     

@@ -60,9 +60,11 @@ void add_to_path() {
     RegCloseKey(hKey);
 }
 
+#define YN_VERSION "1.0.0"
+
 int main() {
     printf("=========================================\n");
-    printf("       YN Language Installer v1.0        \n");
+    printf("       YN Language Installer v%s        \n", YN_VERSION);
     printf("=========================================\n\n");
 
     // 1. Check if the compiler exists in the current directory before installing
