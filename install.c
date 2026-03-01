@@ -11,7 +11,7 @@
 #define INSTALL_DIR "C:\\yn"
 #define MINGW_DIR "C:\\yn\\mingw"
 #define TARGET_EXE "C:\\yn\\yn.exe"
-#define YN_VERSION "1.0.0"
+#define YN_VERSION "1.0.1"
 
 // GUI Component IDs
 #define ID_BTN_INSTALL_YN   1001
@@ -129,7 +129,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
     switch (uMsg) {
         case WM_CREATE: {
             // Title Label
-            CreateWindow("STATIC", "Welcome to the YN Language Installer v1.0.0",
+            CreateWindow("STATIC", "Welcome to the YN Language Installer v1.0.1",
                 WS_VISIBLE | WS_CHILD | SS_CENTER,
                 20, 20, 340, 25,
                 hwnd, NULL, NULL, NULL);

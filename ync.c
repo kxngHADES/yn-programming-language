@@ -2,7 +2,7 @@
 #include <string.h>
 #include "compiler.h"
 
-#define YN_VERSION "1.0.0"
+#define YN_VERSION "1.0.1"
 
 // ==========================================
 // Application Entry Point
