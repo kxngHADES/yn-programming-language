@@ -120,6 +120,57 @@
                         </div>
                         <pre><code>yn script.yn</code></pre>
                     </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h3>Did the GCC not install?</h3>
+                        <p>If the auto-installer failed to link the GCC compiler, you can manually install it via MSYS2.</p>
+                        
+                        <div class="step-card">
+                            <div class="step-icon"><i class="ph-fill ph-download-simple"></i></div>
+                            <div class="step-details">
+                                <h3>1. Download MSYS2</h3>
+                                <p>Go to <a href="https://www.msys2.org/" target="_blank" style="color: var(--accent-primary);">https://www.msys2.org/</a>, download the installer, and follow the default instructions.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-icon"><i class="ph-fill ph-terminal-window"></i></div>
+                            <div class="step-details">
+                                <h3>2. Install MinGW-w64 GCC</h3>
+                                <p>Open the MSYS2 terminal and run the following command to install the required UCRT64 toolchain:</p>
+                                <div class="code-block" style="margin-top: 0.5rem;">
+                                    <div class="code-header">
+                                        <span class="lang-tag">bash</span>
+                                        <button class="copy-btn" title="Copy code"><i class="ph ph-copy"></i></button>
+                                    </div>
+                                    <pre><code>pacman -S mingw-w64-ucrt-x86_64-gcc</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-icon"><i class="ph-fill ph-gear"></i></div>
+                            <div class="step-details">
+                                <h3>3. Update System PATH</h3>
+                                <p>Add <code>C:\msys64\ucrt64\bin</code> to your User or System Environment Variable PATH.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-icon"><i class="ph-fill ph-check-circle"></i></div>
+                            <div class="step-details">
+                                <h3>4. Verify Installation</h3>
+                                <p>Close your terminal, reopen a fresh one, and verify the installation by running:</p>
+                                <div class="code-block" style="margin-top: 0.5rem;">
+                                    <div class="code-header">
+                                        <span class="lang-tag">bash</span>
+                                        <button class="copy-btn" title="Copy code"><i class="ph ph-copy"></i></button>
+                                    </div>
+                                    <pre><code>gcc --version</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <hr>
