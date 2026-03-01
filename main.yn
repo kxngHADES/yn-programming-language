@@ -1,0 +1,15 @@
+hold.this.character initial = 'A';
+hold.this.string my_name = "Brandon";
+hold.this.int age = 21;
+hold.this.boolean isStudent = true;
+
+hold.this.float budget = 23.6f;
+hear_my_mans(f"Budget with native precision: {budget}");
+hear_my_mans(f"Budget with .2f precision: {budget:.2f}");
+hear_my_mans(f"Budget with .0f precision: {budget:.0f}");
+
+hear_my_mans(f"My name is {my_name} \nAge; {age} \nIs a Student; {isStudent}");
+
+laps(i in range(0,10)){
+    hear_my_mans(f"number {i}");
+}
