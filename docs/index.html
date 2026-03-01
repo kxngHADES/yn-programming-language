@@ -59,7 +59,7 @@
 
         <main class="main-content">
             <header class="hero">
-                <div class="taxi-badge">THE BRONX TO BROOKLYN, COMPILED.</div>
+                <div class="taxi-badge">THE Young Niggas, COMPILED.</div>
                 <h1>The <span class="highlight">YN</span> Language</h1>
                 <p class="subtitle">A fast, strictly typed, dynamically parsed language for the next generation of engineers. Built entirely on C. Runs like Python.</p>
                 <div class="hero-actions">
@@ -145,6 +145,43 @@ hold.this.boolean isStudent = true;</code></pre>
                     </div>
                 </section>
 
+                <section id="data-types">
+                    <h2>Data Types</h2>
+                    <p>The streets run on strict data structures. YN natively supports four primary data types:</p>
+                    
+                    <div class="step-card">
+                        <div class="step-icon"><code>"A"</code></div>
+                        <div class="step-details">
+                            <h3><code>string</code></h3>
+                            <p>Used for text up to the default string size limit. Initialize with double quotes: <code>hold.this.string phrase = "what up";</code></p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon"><code>42</code></div>
+                        <div class="step-details">
+                            <h3><code>int</code></h3>
+                            <p>Standard integer blocks. Declare them raw: <code>hold.this.int count = 100;</code></p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon"><code>3.1</code></div>
+                        <div class="step-details">
+                            <h3><code>float</code></h3>
+                            <p>Precision decimal numbers. <code>hold.this.float price = 99.99;</code></p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ph ph-check-square"></i></div>
+                        <div class="step-details">
+                            <h3><code>boolean</code></h3>
+                            <p>Straight facts only: <code>true</code> or <code>false</code>. <code>hold.this.boolean cap = false;</code></p>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="output">
                     <h2>Output & Strings</h2>
                     <p>We support Python-style localized f-string interpolations natively into print statements.</p>
@@ -153,8 +190,21 @@ hold.this.boolean isStudent = true;</code></pre>
                             <span class="lang-tag">yn</span>
                             <button class="copy-btn"><i class="ph ph-copy"></i></button>
                         </div>
-                        <pre><code>hold.this.int age = 21;
-hear_my_mans(f"My age is {age} and I live in NY");</code></pre>
+                        <pre><code>hold.this.string city = "NY";
+hold.this.int age = 21;
+hear_my_mans(f"My age is {age} and I live in {city}");</code></pre>
+                    </div>
+                    
+                    <h3>Formatting Floats</h3>
+                    <p>When dealing with <code>float</code> types in f-strings, YN formats them to 2 decimal places by default for clean currency or percentage outputs.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="lang-tag">yn</span>
+                            <button class="copy-btn"><i class="ph ph-copy"></i></button>
+                        </div>
+                        <pre><code>hold.this.float bill = 45.6789;
+// Outputs: "The tab is 45.68"
+hear_my_mans(f"The tab is {bill}");</code></pre>
                     </div>
                 </section>
 
@@ -176,7 +226,7 @@ hear_my_mans(f"My age is {age} and I live in NY");</code></pre>
             <footer class="doc-footer">
                 <div class="footer-inner">
                     <p>&copy; 2025 YN Language. Designed by Ndaedzo Mudau.</p>
-                    <a href="#top" class="back-to-top">Back to top <i class="ph ph-arrow-up"></i></a>
+                    <a href="#" class="back-to-top">Back to top <i class="ph ph-arrow-up"></i></a>
                 </div>
             </footer>
         </main>

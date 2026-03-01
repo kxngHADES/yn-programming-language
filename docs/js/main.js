@@ -66,6 +66,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Search Engine Logic
+    const docSections = document.querySelectorAll('.doc-content section');
+    const hrElements = document.querySelectorAll('.doc-content hr');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let hasResults = false;
+
+        docSections.forEach(section => {
+            const text = section.innerText.toLowerCase();
+            if (text.includes(query)) {
+                section.style.display = 'block';
+                hasResults = true;
+            } else {
+                section.style.display = 'none';
+            }
+        });
+
+        // Hide decorative lines when searching to keep UI clean
+        hrElements.forEach(hr => {
+            hr.style.display = query ? 'none' : 'block';
+        });
+        
+        // Handle "No results found" state
+        let noResultsMsg = document.getElementById('no-results-msg');
+        if (!hasResults && query) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'no-results-msg';
+                noResultsMsg.style.textAlign = 'center';
+                noResultsMsg.style.marginTop = '4rem';
+                noResultsMsg.style.color = 'var(--text-muted)';
+                noResultsMsg.innerHTML = '<i class="ph ph-magnifying-glass-minus" style="font-size: 3rem; margin-bottom: 1rem; color: var(--border-color); display: inline-block;"></i><br><h3>No results found</h3><p>We couldn\'t find anything matching "<span></span>"</p>';
+                document.querySelector('.doc-content').appendChild(noResultsMsg);
+            }
+            noResultsMsg.style.display = 'block';
+            noResultsMsg.querySelector('span').innerText = e.target.value;
+        } else if (noResultsMsg) {
+            noResultsMsg.style.display = 'none';
+        }
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
