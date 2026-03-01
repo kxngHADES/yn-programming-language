@@ -1,3 +1,0 @@
-laps(i in range(0,10)){
-    hear_my_mans(f"#{i}");
-}
