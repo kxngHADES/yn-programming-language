@@ -10,7 +10,7 @@
 
 #define INSTALL_DIR "C:\\yn"
 #define MINGW_DIR "C:\\yn\\mingw"
-#define TARGET_EXE "C:\\yn\\ync.exe"
+#define TARGET_EXE "C:\\yn\\yn.exe"
 #define YN_VERSION "1.0.0"
 
 // GUI Component IDs
@@ -104,7 +104,7 @@ void do_installation(int include_gcc) {
 
     SetWindowText(hStatusLabel, "Status: Extracting embedded YN Compiler...");
     if (!unpack_compiler()) {
-        MessageBox(NULL, "Failed to write compiler to C:\\yn\\ync.exe", "Error", MB_ICONERROR);
+        MessageBox(NULL, "Failed to write compiler to C:\\yn\\yn.exe", "Error", MB_ICONERROR);
         SetWindowText(hStatusLabel, "Status: Target executable write failed.");
         EnableWindow(hBtnYN, TRUE);
         EnableWindow(hBtnBoth, TRUE);
