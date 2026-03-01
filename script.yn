@@ -1,0 +1,9 @@
+hold.this.string my_name = "Young N - OOP Edition";
+hold.this.int age = 21;
+hold.this.boolean isStudent = true;
+
+hear_my_mans(f"My name is {my_name} \nAge; {age} \nIs a Student; {isStudent}");
+
+laps(i in range(0,3)){
+    hear_my_mans(f"Testing iteration number {i}");
+}

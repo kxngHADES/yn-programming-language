@@ -4,20 +4,16 @@ YN is a fun, lightweight, dynamically parsed programming language built on top o
 
 ## Installation
 
-To run `.yn` files natively using the `yn` command in your terminal anywhere on your system, you need to add the compiler to your system's Environment Variables `PATH`.
+An automated installer is provided for Windows systems to easily configure `yn` so it runs natively exactly like Python.
 
-### For Windows Users
-1. Copy the `ync.exe` compiler executable into a permanent folder on your system (e.g., `C:\YN_Compiler`).
-2. Rename the file from `ync.exe` to `yn.exe`.
-3. Press your Windows key and search for **"Edit the system environment variables"**, then press enter.
-4. In the System Properties window, click the **"Environment Variables..."** button at the bottom.
-5. In the bottom "System variables" section, find the variable named **`Path`** and double-click it.
-6. Click **"New"** and type in the path to the folder where you saved the compiler (e.g., `C:\YN_Compiler`).
-7. Click **OK** on all the windows to save your changes.
-8. Restart your terminal completely.
+### Quick Install (Windows)
+1. Double click on `install.exe` inside this folder (or run it from your terminal).
+2. It will automatically create the `C:\yn` core directory, install the compiler engine there, and permanently register the `C:\yn` alias into your Windows System PATH Environment Variables.
+3. Restart your terminal exactly once!
+4. **Done!**
 
 ### For Bash/Git Bash
-Alternatively, if you strictly use Git Bash on Windows or Mac, you can just set up a terminal alias by running this command in the folder containing `ync.exe`:
+Alternatively, if you only strictly use Git Bash on Windows or Mac, you can bypass the installer and set up a terminal alias by running this command in the folder containing `ync.exe`:
 ```bash
 echo alias yn=\'\"$(pwd)/ync.exe\"\' >> ~/.bash_profile && source ~/.bash_profile
 ```
@@ -26,7 +22,7 @@ echo alias yn=\'\"$(pwd)/ync.exe\"\' >> ~/.bash_profile && source ~/.bash_profil
 
 ## Running YN Programs
 
-Once installed via the System PATH or alias instructions above, you can compile and run any `.yn` file simply by typing:
+Once installed via the Auto-Installer or alias, you can compile and immediately interpret any `.yn` file simply by typing:
 
 ```bash
 yn <filename>.yn
@@ -34,5 +30,5 @@ yn <filename>.yn
 
 For example:
 ```bash
-yn script.yn
+yn main.yn
 ```
