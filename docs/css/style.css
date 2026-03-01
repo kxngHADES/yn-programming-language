@@ -58,6 +58,12 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
+/* Base Responsive Fixes */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -200,8 +206,8 @@ code {
 
 /* Layout */
 .layout-container {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+    display: flex;
+    flex-wrap: nowrap;
     max-width: 1400px;
     margin: 0 auto;
     padding-top: 4rem;
@@ -210,6 +216,7 @@ code {
 
 /* Sidebar */
 .sidebar {
+    flex: 0 0 260px; /* Fixed width sidebar */
     position: sticky;
     top: 4rem;
     height: calc(100vh - 4rem);
@@ -301,6 +308,8 @@ code {
 
 /* Main Content Area */
 .main-content {
+    flex: 1; /* Take up remaining space */
+    min-width: 0; /* Critical for flex items to shrink below their content size */
     padding: 3rem 4rem;
     max-width: 900px;
 }
@@ -432,6 +441,7 @@ hr {
 .step-details p {
     font-size: 0.95rem;
     margin-bottom: 0;
+    word-break: break-word; /* Prevent long URLs/text from breaking cards */
 }
 
 /* Code Blocks */
@@ -535,7 +545,7 @@ hr {
 
 @media (max-width: 768px) {
     .layout-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
     
     .mobile-menu-btn {
@@ -569,10 +579,36 @@ hr {
     
     .hero-actions {
         flex-direction: column;
+        width: 100%;
     }
     
     .btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    /* Fix horizontal scrolling on mobile */
+    .step-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+
+    .step-icon {
+        margin-bottom: 1rem;
+    }
+
+    .code-block pre {
+        padding: 1rem;
+    }
+    
+    .code-block pre code {
+        font-size: 0.85rem;
+    }
+
+    /* Wrap long words like variables on mobile */
+    p, h1, h2, h3, h4 {
+        word-break: break-word;
     }
 }
