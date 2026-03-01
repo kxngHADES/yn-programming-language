@@ -8,8 +8,8 @@ An automated installer is provided for Windows systems to easily configure `yn` 
 
 ### Quick Install (Windows Standalone GUI)
 Unlike traditional C transpilers, the YN Compiler includes everything you need natively packed into a 1-click Graphical UI.
-1. Download or share the `install.exe` file anywhere on a Windows system.
-2. Double-click `install.exe` to launch the **YN Language GUI Installer**.
+1. Download or share the `yn_install.exe` file anywhere on a Windows system.
+2. Double-click `yn_install.exe` to launch the **YN Language GUI Installer**.
 3. Choose to either install the native compiler only, or select the option to have the installer securely download and link GCC MinGW for you automatically in the background.
 4. Once the GUI says Complete, it has cleanly deployed everything to `C:\yn` and registered your System PATH.
 5. Restart your terminal exactly once!

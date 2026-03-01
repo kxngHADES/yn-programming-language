@@ -11,10 +11,10 @@ gcc packer.c -o packer.exe
 packer.exe ync.exe ync_payload.h
 
 echo [3/3] Building Standalone GUI Installer...
-gcc install.c -mwindows -o install.exe
+gcc install.c -mwindows -o yn_install.exe
 
 echo.
 echo ==============================================
 echo Compilation Finished! 
-echo Share 'install.exe' with anyone to install YN.
+echo Share 'yn_install.exe' with anyone to install YN.
 echo ==============================================
